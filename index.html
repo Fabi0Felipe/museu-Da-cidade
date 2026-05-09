@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Museu Digital de Alto do Rodrigues — patrimônio, história e cultura." />
+  <title>Museu Digital | Alto do Rodrigues</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- HEADER: navegação fixa -->
+  <header class="header" id="topo">
+    <div class="header__inner">
+      <a href="#inicio" class="logo" data-smooth>
+        <span class="logo__mark" aria-hidden="true"><i class="bi bi-bank2"></i></span>
+        <span class="logo__text">Museu Digital<span class="logo__accent">Alto do Rodrigues</span></span>
+      </a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="navMenu" aria-label="Principal">
+        <div class="nav__backdrop" data-nav-close tabindex="-1" aria-hidden="true"></div>
+        <div class="nav__sheet">
+          <ul class="nav__list">
+            <li><a href="#inicio" class="nav__link" data-smooth>Início</a></li>
+            <li><a href="#sobre" class="nav__link" data-smooth>O museu</a></li>
+            <li><a href="#historia" class="nav__link" data-smooth>História</a></li>
+            <li><a href="#galeria" class="nav__link" data-smooth>Galeria</a></li>
+            <li><a href="#destaques" class="nav__link" data-smooth>Destaques</a></li>
+            <li><a href="#contato" class="nav__link nav__link--cta" data-smooth>Contato</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--1" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--2" aria-hidden="true"></div>
+      <div class="container hero__content reveal" data-reveal>
+        <p class="hero__eyebrow">Memória viva do Seridó</p>
+        <h1 class="hero__title">Alto do Rodrigues em cada <span class="hero__highlight">história</span></h1>
+        <p class="hero__lead">
+          Um espaço digital que celebra o território, as gentes e o legado cultural do município —
+          entre o rio, o sertão e a criatividade que molda o presente.
+        </p>
+        <div class="hero__actions">
+          <a href="#galeria" class="btn btn--primary" data-smooth>Explorar acervo visual</a>
+          <button type="button" class="btn btn--ghost" id="heroRevealBtn">Ver missão do museu</button>
+        </div>
+        <div class="hero__panel hero__panel--collapsed" id="heroPanel" aria-hidden="true">
+          <p>
+            Missão: democratizar o acesso à memória local por meio de narrativas digitais, curadoria colaborativa
+            e experiências que conectam visitantes ao território de Alto do Rodrigues.
+          </p>
+        </div>
+      </div>
+      <a href="#sobre" class="hero__scroll" data-smooth aria-label="Rolar para a seção O museu">
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- SOBRE O MUSEU -->
+    <section class="section section--about" id="sobre">
+      <div class="container">
+        <header class="section__head reveal" data-reveal>
+          <span class="section__tag">01 — Projeto</span>
+          <h2 class="section__title">Sobre o museu</h2>
+          <p class="section__subtitle">Arquitetura digital para preservar e compartilhar o patrimônio de Alto do Rodrigues.</p>
+        </header>
+        <div class="about__grid">
+          <div class="about__card reveal" data-reveal>
+            <div class="about__card-icon" aria-hidden="true">◈</div>
+            <h3>Curadoria aberta</h3>
+            <p>Conteúdos organizados em trilhas temáticas — do urbano ao rural — com linguagem clara para todos os públicos.</p>
+          </div>
+          <div class="about__card reveal" data-reveal>
+            <div class="about__card-icon" aria-hidden="true">◇</div>
+            <h3>Experiência imersiva</h3>
+            <p>Microinterações, galeria ampliável e leitura progressiva que guiam a visita sem sobrecarregar a tela.</p>
+          </div>
+          <div class="about__card reveal" data-reveal>
+            <div class="about__card-icon" aria-hidden="true">◆</div>
+            <h3>Tecnologia a serviço</h3>
+            <p>Interface leve, acessível e responsiva: o acervo viaja no bolso e chega intacto em qualquer dispositivo.</p>
+          </div>
+        </div>
+        <div class="about__expand reveal" data-reveal>
+          <button type="button" class="about__toggle" id="aboutToggle" aria-expanded="false" aria-controls="aboutDetails">
+            <span>Linha do tempo do projeto</span>
+            <span class="about__toggle-icon" aria-hidden="true"></span>
+          </button>
+          <div class="about__details about__details--collapsed" id="aboutDetails" aria-hidden="true">
+            <ol class="about__timeline">
+              <li><strong>fevereiro de 2026</strong> — Estudo de viabilidade do projeto.</li>
+              <li><strong>Março de 2026</strong> — Aprimoramento do conceito introdutório á progamação.</li>
+              <li><strong>Abril de 2026</strong> — implementação do protótipo do museu digital.</li>
+              <li><strong>Maio de 2026</strong> — Criação de projetos alternativos para enrriquecer o projeto original.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTÓRIA DA CIDADE -->
+    <section class="section section--history" id="historia">
+      <div class="container">
+        <header class="section__head reveal" data-reveal>
+          <span class="section__tag">02 — Território</span>
+          <h2 class="section__title">História da cidade</h2>
+          <p class="section__subtitle">Do sertão ao presente: raízes, economia e identidade.</p>
+        </header>
+        <div class="history__layout">
+          <article class="history__block reveal" data-reveal>
+            <h3>Origens e paisagem</h3>
+            <p>
+              Alto do Rodrigues se desenvolveu às margens do Vale do Açu, em uma região marcada pela força do sertão potiguar e pela presença do Rio Piranhas-Açu. A paisagem mistura áreas urbanas, campos abertos e elementos naturais que fazem parte da identidade local e da memória da população.
+            </p>
+          </article>
+          <article class="history__block reveal reveal--delay" data-reveal>
+            <h3>Economia e vida cotidiana</h3>
+            <p>
+              A história de Alto do Rodrigues está ligada ao crescimento da atividade petrolífera, da agricultura e do comércio local. O município se destacou no interior do Rio Grande do Norte pelo desenvolvimento econômico e pela geração de empregos, transformando o cotidiano da cidade ao longo das últimas décadas.
+            </p>
+          </article>
+          <article class="history__block reveal" data-reveal>
+            <h3>Patrimônio vivo</h3>
+            <p>
+              As festas populares, eventos culturais, tradições religiosas e manifestações musicais mantêm viva a identidade de Alto do Rodrigues. Celebrações como o Alto Folia, os festejos municipais e apresentações culturais fortalecem os laços da comunidade e preservam a cultura local para as novas gerações.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA INTERATIVA -->
+    <section class="section section--gallery" id="galeria">
+      <div class="container">
+        <header class="section__head reveal" data-reveal>
+          <span class="section__tag">03 — Imagens</span>
+          <h2 class="section__title">Galeria interativa</h2>
+          <p class="section__subtitle">Clique para ampliar. Navegue pelos registros do território.</p>
+        </header>
+        <div class="gallery__filter reveal" data-reveal role="tablist" aria-label="Filtrar galeria">
+          <button type="button" class="gallery__chip is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+          <button type="button" class="gallery__chip" data-filter="paisagem" role="tab" aria-selected="false">Paisagem</button>
+          <button type="button" class="gallery__chip" data-filter="cultura" role="tab" aria-selected="false">Cultura</button>
+          <button type="button" class="gallery__chip" data-filter="urbano" role="tab" aria-selected="false">Urbano</button>
+          <button type="button" class="gallery__chip" data-filter="esporte" role="tab" aria-selected="false">Esporte</button>
+        </div>
+        <ul class="gallery__grid">
+          <li class="gallery__item reveal" data-reveal data-category="paisagem">
+            <button type="button" class="gallery__thumb" data-modal-open
+              data-src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUF-rmjpAj9QGnfxlDVSN3gGGXNbSpBtMMWBdTZ_0z8OELrE-WKLnv51Uw-okYBh3znB5dCbmOMWglhQID7KxYddur1uTlMNP1oB-J9tMdgC8R4XZudylAz_HDhYOli8bD3qKDaiFOT5Wv/s1600/1621767_529574560500621_7794447418992848174_n.jpg"
+              data-caption="Praça de encontro e lazer — paisagem urbana e ponto de encontro em Alto do Rodrigues.">
+              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUF-rmjpAj9QGnfxlDVSN3gGGXNbSpBtMMWBdTZ_0z8OELrE-WKLnv51Uw-okYBh3znB5dCbmOMWglhQID7KxYddur1uTlMNP1oB-J9tMdgC8R4XZudylAz_HDhYOli8bD3qKDaiFOT5Wv/s1600/1621767_529574560500621_7794447418992848174_n.jpg" alt="Praça em Alto do Rodrigues" loading="lazy" width="600" height="400" />
+              <span class="gallery__thumb-overlay"><span class="gallery__thumb-label">Expandir</span></span>
+            </button>
+          </li>
+          <li class="gallery__item reveal" data-reveal data-category="cultura">
+            <button type="button" class="gallery__thumb" data-modal-open
+              data-src="assets/cultura-1.png"
+              data-caption="Alto Folia — festa e movimentação popular em Alto do Rodrigues com cantores famosos e artistas locais.">
+              <img src="assets/cultura-1.png" alt="Multidão em evento cultural" loading="lazy" width="600" height="400" />
+              <span class="gallery__thumb-overlay"><span class="gallery__thumb-label">Expandir</span></span>
+            </button>
+          </li>
+          <li class="gallery__item reveal" data-reveal data-category="urbano">
+            <button type="button" class="gallery__thumb" data-modal-open
+              data-src="assets/centro-urbano-1.png"
+              data-caption="Centro urbano — registro do município de Alto do Rodrigues.">
+              <img src="assets/centro-urbano-1.png" alt="Centro urbano de Alto do Rodrigues" loading="lazy" width="600" height="400" />
+              <span class="gallery__thumb-overlay"><span class="gallery__thumb-label">Expandir</span></span>
+            </button>
+          </li>
+          <li class="gallery__item reveal" data-reveal data-category="esporte">
+            <button type="button" class="gallery__thumb" data-modal-open
+              data-src="assets/jiujitsu.png"
+              data-caption="Jiu-jitsu — equipe e formação esportiva em Alto do Rodrigues na Academia De Higino Batista.">
+              <img src="assets/jiujitsu.png" alt="Equipe de jiu-jitsu em foto de grupo" loading="lazy" width="600" height="400" />
+              <span class="gallery__thumb-overlay"><span class="gallery__thumb-label">Expandir</span></span>
+            </button>
+          </li>
+          <li class="gallery__item reveal" data-reveal data-category="esporte">
+            <button type="button" class="gallery__thumb" data-modal-open
+              data-src="assets/basquete.png"
+              data-crop="top"
+              data-caption="Basquete — time e comunidade N.B.A.R na quadra do WG.">
+              <img src="assets/basquete.png" alt="Equipe de basquete em foto de grupo na quadra" loading="lazy" width="600" height="400" />
+              <span class="gallery__thumb-overlay"><span class="gallery__thumb-label">Expandir</span></span>
+            </button>
+          </li>
+          <li class="gallery__item reveal" data-reveal data-category="esporte">
+            <button type="button" class="gallery__thumb" data-modal-open
+              data-src="assets/taekwondo.png"
+              data-caption="Taekwondo — Academia de taekwondo Dragon Kyorugui em Alto Do Rodrigues.">
+              <img src="assets/taekwondo.png" alt="Grupo de taekwondo em foto alinhada no tatame" loading="lazy" width="600" height="400" />
+              <span class="gallery__thumb-overlay"><span class="gallery__thumb-label">Expandir</span></span>
+            </button>
+          </li>
+          <li class="gallery__item reveal" data-reveal data-category="paisagem">
+            <button type="button" class="gallery__thumb" data-modal-open
+              data-src="assets/rio.png"
+              data-caption="Rio Piranhas Açu — águas e travessia, ponto de encontro para diversão e lazer em geral">
+              <img src="assets/rio.png" alt="Rio em Alto do Rodrigues" loading="lazy" width="600" height="400" />
+              <span class="gallery__thumb-overlay"><span class="gallery__thumb-label">Expandir</span></span>
+            </button>
+          </li>
+          <li class="gallery__item reveal" data-reveal data-category="cultura">
+            <button type="button" class="gallery__thumb" data-modal-open
+              data-src="assets/cultura-2.png"
+              data-caption="Cultura — encontro comunitário com grande participação popular.">
+              <img src="assets/cultura-2.png" alt="Público reunido em evento" loading="lazy" width="600" height="400" />
+              <span class="gallery__thumb-overlay"><span class="gallery__thumb-label">Expandir</span></span>
+            </button>
+          </li>
+          <li class="gallery__item reveal" data-reveal data-category="urbano">
+            <button type="button" class="gallery__thumb" data-modal-open
+              data-src="assets/centro-urbano-2.png"
+              data-caption="Centro urbano — registro da Avenida Ângelo Varela em alto do Rodrigues.">
+              <img src="assets/centro-urbano-2.png" alt="Centro urbano de Alto do Rodrigues" loading="lazy" width="600" height="400" />
+              <span class="gallery__thumb-overlay"><span class="gallery__thumb-label">Expandir</span></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DESTAQUES CULTURAIS -->
+    <section class="section section--highlights" id="destaques">
+      <div class="container">
+        <header class="section__head reveal" data-reveal>
+          <span class="section__tag">04 — Cultura</span>
+          <h2 class="section__title">Destaques culturais</h2>
+          <p class="section__subtitle">Cartões com camadas de informação — passe o cursor ou toque para explorar.</p>
+        </header>
+        <div class="highlights__grid">
+          <article class="hcard reveal" data-reveal tabindex="0">
+            <div class="hcard__glow" aria-hidden="true"></div>
+            <div class="hcard__inner">
+              <span class="hcard__num">01</span>
+              <h3 class="hcard__title">Alto Folia</h3>
+              <p class="hcard__excerpt">Micareta tradicional que transforma Alto do Rodrigues em um grande corredor de festa, música e alegria.</p>
+              <div class="hcard__more">
+                <p>Shows, trios elétricos e blocos carnavalescos reúnem moradores e visitantes em uma das celebrações mais aguardadas da região, fortalecendo a cultura festiva e o turismo local.</p>
+              </div>
+            </div>
+          </article>
+          <article class="hcard reveal reveal--delay" data-reveal tabindex="0">
+            <div class="hcard__glow" aria-hidden="true"></div>
+            <div class="hcard__inner">
+              <span class="hcard__num">02</span>
+              <h3 class="hcard__title">Tradição do padroeiro</h3>
+              <p class="hcard__excerpt">Celebrações que unem gerações e fortalecem a identidade cultural da cidade.</p>
+              <div class="hcard__more">
+                <p>Procissões, novenas e encontros religiosos movimentam Alto do Rodrigues, reunindo moradores em momentos de fé, tradição e convivência.</p>
+              </div>
+            </div>
+          </article>
+          <article class="hcard reveal" data-reveal tabindex="0">
+            <div class="hcard__glow" aria-hidden="true"></div>
+            <div class="hcard__inner">
+              <span class="hcard__num">03</span>
+              <h3 class="hcard__title">Cultura do petróleo</h3>
+              <p class="hcard__excerpt">A força da indústria que impulsionou o crescimento e transformou a região.</p>
+              <div class="hcard__more">
+                <p>A presença do petróleo ajudou a desenvolver Alto do Rodrigues, criando oportunidades, movimentando a economia e marcando a história local.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer" id="contato">
+    <div class="container footer__grid">
+      <div class="footer__brand reveal" data-reveal>
+        <span class="logo__mark logo__mark--footer" aria-hidden="true"></span>
+        <p class="footer__name">Museu Digital de Alto do Rodrigues</p>
+        <p class="footer__note">Projeto sem fins lucrativos — conteúdo com fins educativos e informativos.</p>
+      </div>
+      <div class="footer__block reveal" data-reveal>
+        <h3 class="footer__title">Visite</h3>
+        <p>Alto do Rodrigues, RN — Brasil</p>
+        <p><a href="https://www.google.com/maps/search/Alto+do+Rodrigues+RN" target="_blank" rel="noopener noreferrer">Abrir no mapa</a></p>
+      </div>
+      <div class="footer__block reveal" data-reveal>
+        <h3 class="footer__title">Contato</h3>
+        <p><a href="mailto:contato@museudigital-altorodrigues.org.br">contato@museudigital-altorodrigues.org.br</a></p>
+        <p><a href="tel:+5584999990000">(84) 99999-0000</a></p>
+      </div>
+      <div class="footer__block reveal" data-reveal>
+        <h3 class="footer__title">Redes</h3>
+        <ul class="footer__social">
+          <li><a href="#" aria-label="Instagram">IG</a></li>
+          <li><a href="#" aria-label="YouTube">YT</a></li>
+          <li><a href="#" aria-label="Facebook">FB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <div class="container footer__bar-inner">
+        <p>© <span id="year"></span> Museu Digital — Alto do Rodrigues</p>
+        <a href="#topo" class="footer__top" data-smooth>Voltar ao topo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL GALERIA -->
+  <div class="modal" id="galleryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-modal-close tabindex="-1"></div>
+    <div class="modal__dialog">
+      <h2 class="sr-only" id="modalTitle">Visual ampliado</h2>
+      <button type="button" class="modal__close" data-modal-close aria-label="Fechar">&times;</button>
+      <figure class="modal__figure">
+        <img src="" alt="" id="modalImage" class="modal__img" />
+        <figcaption id="modalCaption" class="modal__caption"></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
