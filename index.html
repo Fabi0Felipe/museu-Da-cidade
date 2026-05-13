@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)" />
   <meta name="description" content="Museu Digital de Alto do Rodrigues — patrimônio, história e cultura." />
   <title>Museu Digital | Alto do Rodrigues</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -287,7 +288,7 @@
   <footer class="footer" id="contato">
     <div class="container footer__grid">
       <div class="footer__brand reveal" data-reveal>
-        <span class="logo__mark logo__mark--footer" aria-hidden="true"></span>
+        <span class="logo__mark" aria-hidden="true"><i class="bi bi-bank2"></i></span>
         <p class="footer__name">Museu Digital de Alto do Rodrigues</p>
         <p class="footer__note">Projeto sem fins lucrativos — conteúdo com fins educativos e informativos.</p>
       </div>
@@ -304,7 +305,7 @@
       <div class="footer__block reveal" data-reveal>
         <h3 class="footer__title">Redes</h3>
         <ul class="footer__social">
-          <li><a href="#" aria-label="Instagram">IG</a></li>
+          <li><a href="https://www.instagram.com/dra.raquelprefeita/" aria-label="Instagram">IG</a></li>
           <li><a href="#" aria-label="YouTube">YT</a></li>
           <li><a href="#" aria-label="Facebook">FB</a></li>
         </ul>
@@ -330,6 +331,18 @@
       </figure>
     </div>
   </div>
+
+  <audio
+    id="siteAmbientBg"
+    preload="none"
+    loop
+    tabindex="-1"
+    hidden
+    aria-hidden="true"
+    style="position:absolute;width:0;height:0;opacity:0;pointer-events:none"
+  >
+    <source src="elevator%20music.mp4" type="audio/mp4" />
+  </audio>
 
   <script src="js/script.js"></script>
 </body>

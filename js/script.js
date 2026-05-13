@@ -126,9 +126,10 @@
     });
   }
 
-  /** Reveal on scroll */
+  /** Reveal on scroll — margens mais generosas em viewport estreito (celulares) */
   var revealEls = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && revealEls.length) {
+    var narrow = typeof window.matchMedia === "function" && window.matchMedia("(max-width: 768px)").matches;
     var revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -138,7 +139,11 @@
           }
         });
       },
-      { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+      {
+        root: null,
+        rootMargin: narrow ? "0px 0px -2% 0px" : "0px 0px -8% 0px",
+        threshold: narrow ? 0.05 : 0.08,
+      }
     );
     revealEls.forEach(function (el) {
       revealObserver.observe(el);
@@ -228,6 +233,31 @@
       });
     });
 
+  }
+
+  /** Áudio ambiente: só após gesto do usuário (autoplay policies); loop e volume baixíssimo */
+  var ambientBg = document.getElementById("siteAmbientBg");
+  if (ambientBg) {
+    ambientBg.volume = 1;
+
+    var ambientArmed = false;
+    function startAmbientBg() {
+      if (ambientArmed) return;
+      ambientArmed = true;
+      document.removeEventListener("pointerdown", startAmbientBg);
+      document.removeEventListener("keydown", startAmbientBg);
+      var pending = ambientBg.play();
+      if (pending && typeof pending.catch === "function") {
+        pending.catch(function () {
+          ambientArmed = false;
+          document.addEventListener("pointerdown", startAmbientBg, { passive: true });
+          document.addEventListener("keydown", startAmbientBg, { passive: true });
+        });
+      }
+    }
+
+    document.addEventListener("pointerdown", startAmbientBg, { passive: true });
+    document.addEventListener("keydown", startAmbientBg, { passive: true });
   }
 
 })();
