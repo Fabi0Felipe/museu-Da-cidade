@@ -6,6 +6,17 @@
 (function () {
   "use strict";
 
+  /** Breakpoints alinhados ao CSS (480 | 768 | 1024 | 1440) */
+  var BP = {
+    tablet: "(max-width: 1024px)",
+    phone: "(max-width: 768px)",
+    small: "(max-width: 480px)",
+  };
+
+  function mq(query) {
+    return typeof window.matchMedia === "function" && window.matchMedia(query).matches;
+  }
+
   /** Scroll suave para âncoras internas */
   document.querySelectorAll('a[data-smooth][href^="#"]').forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
@@ -28,7 +39,7 @@
 
   function syncMobileNavA11y() {
     if (!navMenu) return;
-    var mobile = window.matchMedia("(max-width: 880px)").matches;
+    var mobile = mq(BP.tablet);
     if (mobile) {
       var open = navMenu.classList.contains("is-open");
       navMenu.setAttribute("aria-hidden", open ? "false" : "true");
@@ -62,7 +73,7 @@
 
     navMenu.querySelectorAll(".nav__link").forEach(function (link) {
       link.addEventListener("click", function () {
-        if (window.matchMedia("(max-width: 880px)").matches) closeMobileNav();
+        if (mq(BP.tablet)) closeMobileNav();
       });
     });
 
@@ -73,8 +84,16 @@
     window.addEventListener(
       "resize",
       function () {
-        if (!window.matchMedia("(max-width: 880px)").matches) closeMobileNav();
+        if (!mq(BP.tablet)) closeMobileNav();
         else syncMobileNavA11y();
+      },
+      { passive: true }
+    );
+
+    window.addEventListener(
+      "orientationchange",
+      function () {
+        if (mq(BP.tablet)) closeMobileNav();
       },
       { passive: true }
     );
@@ -126,10 +145,10 @@
     });
   }
 
-  /** Reveal on scroll — margens mais generosas em viewport estreito (celulares) */
+  /** Reveal on scroll — margens ajustadas por viewport */
   var revealEls = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && revealEls.length) {
-    var narrow = typeof window.matchMedia === "function" && window.matchMedia("(max-width: 768px)").matches;
+    var narrow = mq(BP.phone);
     var revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -233,7 +252,33 @@
       });
     });
 
+    window.addEventListener(
+      "orientationchange",
+      function () {
+        if (!modal.hidden) closeModal();
+      },
+      { passive: true }
+    );
   }
+
+  /** Cards culturais — toque em telas sem hover */
+  var hcards = document.querySelectorAll(".hcard");
+  hcards.forEach(function (card) {
+    card.setAttribute("aria-expanded", "false");
+
+    card.addEventListener("click", function () {
+      if (!mq("(hover: none)")) return;
+      var expanded = card.classList.toggle("is-expanded");
+      card.setAttribute("aria-expanded", expanded ? "true" : "false");
+    });
+
+    card.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      var expanded = card.classList.toggle("is-expanded");
+      card.setAttribute("aria-expanded", expanded ? "true" : "false");
+    });
+  });
 
   /** Áudio ambiente: só após gesto do usuário (autoplay policies); loop e volume baixíssimo */
   var ambientBg = document.getElementById("siteAmbientBg");
